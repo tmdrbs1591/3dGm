@@ -9,12 +9,13 @@ public class Player : MonoBehaviour
     public float speed;
     public GameObject[] weapons;
     public bool[] hasWeapons;
+    public GameObject[] grenades;
+    public int hasGrenades;
 
 
     public int ammo;
     public int coin;
     public int health;
-    public int hasGrenades;
 
     public int maxammo;
     public int maxcoin;
@@ -204,6 +205,7 @@ public class Player : MonoBehaviour
                         health = maxhealth;
                     break;
                 case item.Type.Grenade:
+                    grenades[hasGrenades].SetActive(true);
                     hasGrenades += items.value;
                     if (hasGrenades > maxhasGrenades)
                         hasGrenades = maxhasGrenades;
